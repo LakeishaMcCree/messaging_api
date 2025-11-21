@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       post 'register', to: 'auth#register'
       post 'login', to: 'auth#login'
-      #I'll add conversations/messages routes later
+      
+      resources :conversations, only: [:index, :show, :create] do
+        resources :messages, only: [:index, :create]
     end
   end
 end
