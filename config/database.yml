@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  username: postgres
+  password: YOUR_PASSWORD_HERE
+  port: 5432
+
+development:
+  <<: *default
+  database: messaging_api_development
+
+test:
+  <<: *default
+  database: messaging_api_test
+
+production:
+  <<: *default
+  database: messaging_api_production
+  username: postgres
+  password: LakeDev2025
