@@ -1,10 +1,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
+  host: 127.0.0.1
   pool: 5
   username: postgres
-  password: YOUR_PASSWORD_HERE
+  password: LakeDev2025
   port: 5432
 
 development:
@@ -19,4 +19,4 @@ production:
   <<: *default
   database: messaging_api_production
   username: postgres
-  password: LakeDev2025
+  password: <%= ENV['MESSAGING_API_DATABASE_PASSWORD'] %>
